@@ -68,4 +68,6 @@ def load_csv():
             coupon_to_customer_id[coupon_name] = customer_id
             if 'not' in coupon_status.lower():
                 unused_coupon_list.append(coupon_name)
+            else:
+                used_coupon_list.append(coupon_name)
     print(" total unused_coupon_list coupon ", len(unused_coupon_list))
