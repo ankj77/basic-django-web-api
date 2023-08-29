@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pyngrok import ngrok
 
 
 def main():
@@ -15,7 +16,19 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+        # Start the Django development server
+    # django_port = 8000  # Replace with your Django development server's port
+    # public_url = ngrok.connect(django_port)
+    # print("Public URL:", public_url)
+
+    # try:
     execute_from_command_line(sys.argv)
+    # finally:
+    #     # Disconnect and terminate the tunnel when done
+    #     ngrok.disconnect(public_url)
+    #     ngrok.terminate()
+
 
 
 if __name__ == '__main__':
