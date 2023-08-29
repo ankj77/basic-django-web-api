@@ -4,6 +4,8 @@ import os
 import sys
 from pyngrok import ngrok
 
+from coupon.views import load_csv
+
 
 def main():
     """Run administrative tasks."""
@@ -23,6 +25,7 @@ def main():
     # print("Public URL:", public_url)
 
     # try:
+    load_csv()
     execute_from_command_line(sys.argv)
     # finally:
     #     # Disconnect and terminate the tunnel when done
